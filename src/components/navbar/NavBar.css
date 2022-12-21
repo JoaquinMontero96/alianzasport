@@ -61,6 +61,7 @@
     border-bottom-right-radius: 8px;
     border: none;
     background-color: #a4cfea;
+    transition: all .4s ease;
 }
 
 .searchButton:hover{
