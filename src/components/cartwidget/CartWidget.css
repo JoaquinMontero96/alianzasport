@@ -1,0 +1,9 @@
+.cart{
+    width: 25px;
+    height: auto;
+    margin: 40px;
+}
+
+.cart:hover{
+    cursor: pointer;
+}
