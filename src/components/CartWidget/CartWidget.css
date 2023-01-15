@@ -1,0 +1,18 @@
+.cartImg{
+    width: 25px;
+    height: auto;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: all .4s ease;
+}
+
+
+.cart:hover{
+    cursor: pointer;
+    color: #f3c15a;
+}
