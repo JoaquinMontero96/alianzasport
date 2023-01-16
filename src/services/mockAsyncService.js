@@ -5,7 +5,7 @@ export default function obtenerProductos(){
         {
             setTimeout(() => {
             resolve(products);
-            }, 1);
+            }, 2000);
 })};
 
 export function obtenerProductoUnico(itemid){
@@ -18,7 +18,7 @@ export function obtenerProductoUnico(itemid){
                 } else {
                     reject("Producto no encontrado");
                 }
-            }, 1);
+            }, 2000);
 })};
 
 export function obtenerProductosPorDivision(divisionid){
@@ -31,5 +31,5 @@ export function obtenerProductosPorDivision(divisionid){
                 } else {
                     reject("División no encontrada");
                 }
-            }, 1);
+            }, 2000);
 })};
