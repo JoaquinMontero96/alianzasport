@@ -7,6 +7,7 @@ export default function ItemDetailContainer(){
     const [product, setProduct] = useState([]);
     let { itemid } = useParams();
     useEffect(() => {
+        window.scroll(0,0)
         obtenerProductoUnico(itemid)
         .then((respuesta) => {setProduct(respuesta)})
         .catch((error) => {alert(`Error: ${error}`)})
