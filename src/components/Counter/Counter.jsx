@@ -1,16 +1,19 @@
 import { useState } from "react";
 import "./Counter.css";
 
-function Counter({stock}){
+function Counter({stock, onAdd}){
     const [count, setCount] = useState(1);
     const subtract = () => {count > 1 && setCount(count - 1)};
     const add = () => {count < stock && setCount(count + 1)};
 
     return(
-        <div className="counter">
-            <button className="counterBtn" onClick={subtract}>-</button>
-            <p className="counterTxt">{count}</p>
-            <button className="counterBtn" onClick={add}>+</button>
+        <div className="counterContainer">
+            <div className="counter">
+                <button className="counterBtn" onClick={subtract}>-</button>
+                <p className="counterTxt">{count}</p>
+                <button className="counterBtn" onClick={add}>+</button>
+            </div>
+            <button className="productBtn" onClick={() => onAdd(count)}>AGREGAR AL CARRITO</button>
         </div>
     )
 };

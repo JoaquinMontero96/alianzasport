@@ -22,7 +22,7 @@ export default function ItemListContainer(){
                     setTitle(`CAMISETAS DE PRIMERA B NACIONAL`);
                     break;
             }
-            setBannerImg("./img/banners/banner02.jpg");
+            setBannerImg("../img/banners/banner02.jpg");
         } else {
             obtenerProductos().then((respuesta) => {setProducts(respuesta)})
             setTitle(`TODOS LOS PRODUCTOS`);
