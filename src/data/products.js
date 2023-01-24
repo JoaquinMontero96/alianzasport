@@ -223,7 +223,7 @@ const products = [
     },
     {
         urlImg: "../img/camisetas/chaco2022.png",
-        urlEscudo: "../img/escudos/chaco.png",
+        urlEscudo: "../img/escudos/chaco-for-ever.png",
         title: "Camiseta titular Chaco For Ever 2022",
         price: 11999,
         id: 18,
