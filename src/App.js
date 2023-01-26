@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Footer from './components/Footer/Footer';
 import { CartContextProvider } from './storage/cartContext';
+import Cart from './components/Cart/Cart';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path='/division/:divisionid' element={<ItemListContainer />}/>
           <Route path='/item/:itemid' element={<ItemDetailContainer />}/>
           <Route path='*' element={<h2>Error 404: Page not found</h2>}/>
+          <Route path='/cart' element={<Cart/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

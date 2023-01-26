@@ -9,8 +9,8 @@
     align-items: center;
     gap: 5px;
     transition: all .4s ease;
+    color: white;
 }
-
 
 .cart:hover{
     cursor: pointer;

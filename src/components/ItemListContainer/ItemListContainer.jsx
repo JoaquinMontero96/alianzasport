@@ -29,7 +29,6 @@ export default function ItemListContainer(){
             setBannerImg("./img/banners/banner.jpg");
         }
     }, [divisionid]);
-    console.log(bannerImg)
 
     return (
         <div className="itemListContainer">

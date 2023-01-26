@@ -20,7 +20,7 @@ export function CartContextProvider(props){
     }
 
     function clearCart(){
-        /* */
+        setCart([]);
     }
 
     function getTotalItems(){
@@ -32,7 +32,7 @@ export function CartContextProvider(props){
     function getTotalPrice(){
         let total = 0;
         cart.forEach( (item) => {total += item.count * item.price});
-        alert(total);
+        return total;
     }
 
     let value = {cart, addItem, getTotalItems, getTotalPrice}
