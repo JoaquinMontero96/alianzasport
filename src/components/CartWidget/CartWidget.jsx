@@ -4,11 +4,11 @@ import { cartContext } from "../../storage/cartContext";
 import "./CartWidget.css";
 
 export default function CartWidget(){
-    const { getTotalItems } = useContext(cartContext);
+    const { cart, getTotalItems } = useContext(cartContext);
 
     return (
         <div className="cart">
-            <p className="cartAmount">{getTotalItems()}</p>
+            {cart.length > 0 && <p className="cartAmount">{getTotalItems()}</p>}
             <Link to={'/cart'}><img className="cartImg" src="/img/cart.png" alt="carrito" /></Link>
         </div>
     )

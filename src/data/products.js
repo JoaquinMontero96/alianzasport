@@ -36,7 +36,7 @@ const products = [
         division: "b",
         club: "Almagro",
         provincia: "Buenos Aires",
-        stock: 8,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/almirante-brown2021.png",
@@ -180,7 +180,7 @@ const products = [
         division: "b",
         club: "Brown de Adrogué",
         provincia: "Buenos Aires",
-        stock: 2,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/brown-madryn2019.png",
@@ -193,7 +193,7 @@ const products = [
         division: "b",
         club: "Brown de Puerto Madryn",
         provincia: "Chubut",
-        stock: 3,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/central-cordoba2020.png",
@@ -206,7 +206,7 @@ const products = [
         division: "a",
         club: "Central Córdoba",
         provincia: "Santiago del Estero",
-        stock: 2,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/chacarita2020.png",
@@ -232,7 +232,7 @@ const products = [
         division: "b",
         club: "Chaco For Ever",
         provincia: "Chaco",
-        stock: 2,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/chicago2022.png",
@@ -258,7 +258,7 @@ const products = [
         division: "a",
         club: "Colón de Santa Fé",
         provincia: "Santa Fé",
-        stock: 1,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/dalmine2020.png",
@@ -271,7 +271,7 @@ const products = [
         division: "b",
         club: "Villa Dálmine",
         provincia: "Buenos Aires",
-        stock: 3,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/defensa2022.png",
@@ -310,7 +310,7 @@ const products = [
         division: "b",
         club: "Defensores Unidos",
         provincia: "Buenos Aires",
-        stock: 2,
+        stock: 0,
     },
     {
         urlImg: "../img/camisetas/deportivo-madryn2022.png",

@@ -15,7 +15,7 @@ function Counter({stock, onAdd}){
                 <button className="counterBtn" onClick={add}>+</button>
             </div>
             <div style={{display: 'flex', gap: '10px'}}>
-                <button className="productBtn" onClick={() => onAdd(count)}>AGREGAR AL CARRITO</button>
+                <button className={stock < 1 ? 'sinStockBtn' : 'productBtn'} onClick={() => stock > 0 && onAdd(count)}>{stock < 1 ? "SIN STOCK" : "AGREGAR AL CARRITO"}</button>
                 <Link to={'/cart'}><button className="productBtn">TERMINAR MI COMPRA</button></Link>
             </div>
         </div>

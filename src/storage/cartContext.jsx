@@ -15,8 +15,9 @@ export function CartContextProvider(props){
         }
     }
 
-    function removeItem(item){
-        /* */
+    function removeItem(itemToRemove){
+        let carrito = cart.filter(item => item.id !== itemToRemove);
+        setCart(carrito);
     }
 
     function clearCart(){
@@ -35,7 +36,7 @@ export function CartContextProvider(props){
         return total;
     }
 
-    let value = {cart, addItem, getTotalItems, getTotalPrice}
+    let value = {cart, addItem, getTotalItems, getTotalPrice, clearCart, removeItem}
 
     return(
         <cartContext.Provider value={value}>

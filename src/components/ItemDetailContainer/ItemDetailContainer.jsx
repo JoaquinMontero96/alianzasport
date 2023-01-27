@@ -2,20 +2,22 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { obtenerProductoUnico } from "../../services/mockAsyncService";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
 
 export default function ItemDetailContainer(){
     const [product, setProduct] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     let { itemid } = useParams();
     useEffect(() => {
         window.scroll(0,0);
         obtenerProductoUnico(itemid)
-        .then((respuesta) => {setProduct(respuesta)})
+        .then((respuesta) => {setProduct(respuesta); setIsLoading(false)})
         .catch((error) => {alert(`Error: ${error}`)})
     }, []);
 
     return (
         <>
-            <ItemDetail product={product}/>
+            {isLoading ? <Loader/> : <ItemDetail product={product}/>}
         </>
     )
 }

@@ -4,16 +4,18 @@ import obtenerProductos, { obtenerProductosPorDivision } from "../../services/mo
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
 import Banner from "../Banner/Banner";
+import Loader from "../Loader/Loader";
 
 export default function ItemListContainer(){
     const [products, setProducts] = useState([]);
     const [title, setTitle] = useState("");
     const [bannerImg, setBannerImg] = useState("./img/banners/banner.jpg");
+    const [isLoading, setIsLoading] = useState(true);
     let { divisionid } = useParams();
 
     useEffect(() => {
         if(divisionid){
-            obtenerProductosPorDivision(divisionid).then((respuesta) => {setProducts(respuesta)});
+            obtenerProductosPorDivision(divisionid).then((respuesta) => {setProducts(respuesta); setIsLoading(false)});
             switch(divisionid){
                 case "a":
                     setTitle(`CAMISETAS DE PRIMERA DIVISIÓN`);
@@ -24,7 +26,10 @@ export default function ItemListContainer(){
             }
             setBannerImg("../img/banners/banner02.jpg");
         } else {
-            obtenerProductos().then((respuesta) => {setProducts(respuesta)})
+            obtenerProductos().then((respuesta) => {
+                setProducts(respuesta);
+                setIsLoading(false);
+            });
             setTitle(`TODOS LOS PRODUCTOS`);
             setBannerImg("./img/banners/banner.jpg");
         }
@@ -33,8 +38,12 @@ export default function ItemListContainer(){
     return (
         <div className="itemListContainer">
             <Banner url={bannerImg}/>
-            <h2 className="itemListContainerTitle">{title}</h2>
-            <ItemList products={products} />
+            {isLoading ? <Loader/> :
+            <>
+                <h2 className="itemListContainerTitle">{title}</h2>
+                <ItemList products={products} />
+            </>
+            }
         </div>
     )
 }
