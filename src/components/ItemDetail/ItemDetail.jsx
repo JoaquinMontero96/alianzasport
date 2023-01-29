@@ -8,8 +8,7 @@ export default function ItemDetail({product}) {
 
     function handleAddToCart(count) {
         alert(`Agregaste ${count} ${product.title} al carrito`);
-        product.count = count;
-        addItem(product);
+        addItem({...product, count:count});
     }
 
     return(

@@ -7,12 +7,13 @@ export function CartContextProvider(props){
 
     function addItem(item) {
         let newCart = [...cart];
-        if(cart.some( (element) => element.id === item.id)){
-            alert('El producto ya está en el carrito');
+        let itemRepetido = cart.find(element => element.id === item.id);
+        if(itemRepetido){
+            itemRepetido.count += item.count;
         } else {
             newCart.push(item);
-            setCart(newCart);
         }
+        setCart(newCart);
     }
 
     function removeItem(itemToRemove){
