@@ -5,8 +5,11 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Footer from './components/Footer/Footer';
 import { CartContextProvider } from './storage/cartContext';
 import Cart from './components/Cart/Cart';
+import { obtenerProductoUnico } from './services/db';
 
 export default function App() {
+  obtenerProductoUnico();
+
   return (
     <CartContextProvider>
       <BrowserRouter>

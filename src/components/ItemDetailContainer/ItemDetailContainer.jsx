@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { obtenerProductoUnico } from "../../services/mockAsyncService";
+import { obtenerProductoUnico } from "../../services/db";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
 

@@ -1,6 +1,6 @@
 import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
-import obtenerProductos, { obtenerProductosPorDivision } from "../../services/mockAsyncService";
+import { obtenerProductos, obtenerProductosPorDivision } from "../../services/db";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
 import Banner from "../Banner/Banner";
