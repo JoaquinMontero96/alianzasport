@@ -1,6 +1,6 @@
 import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
-import { obtenerProductos, obtenerProductosPorDivision } from "../../services/db";
+import { obtenerProductos, obtenerProductosPorMarca } from "../../services/db";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
 import Banner from "../Banner/Banner";
@@ -11,20 +11,74 @@ export default function ItemListContainer(){
     const [title, setTitle] = useState("");
     const [bannerImg, setBannerImg] = useState("./img/banners/banner.jpg");
     const [isLoading, setIsLoading] = useState(true);
-    let { divisionid } = useParams();
+    let { marcaid } = useParams();
 
     useEffect(() => {
-        if(divisionid){
-            obtenerProductosPorDivision(divisionid).then((respuesta) => {setProducts(respuesta); setIsLoading(false)});
-            switch(divisionid){
-                case "a":
-                    setTitle(`CAMISETAS DE PRIMERA DIVISIÓN`);
+        if(marcaid){
+            obtenerProductosPorMarca(marcaid).then((respuesta) => {setProducts(respuesta); setIsLoading(false)});
+            switch(marcaid){
+                case "adidas":
+                    setTitle(`ADIDAS`);
                     break;
-                case "b":
-                    setTitle(`CAMISETAS DE PRIMERA B NACIONAL`);
+                case "nike":
+                    setTitle(`NIKE`);
+                    break;
+                case "kappa":
+                    setTitle(`KAPPA`);
+                    break;
+                case "retiel":
+                    setTitle(`RETIEL`);
+                    break;
+                case "lyon":
+                    setTitle(`LYON`);
+                    break;
+                case "umbro":
+                    setTitle(`UMBRO`);
+                    break;
+                case "ilossso":
+                    setTitle(`IL OSSSO`);
+                    break;
+                case "givova":
+                    setTitle(`GIVOVA`);
+                    break;
+                case "adhoc":
+                    setTitle(`ADHOC`);
+                    break;
+                case "hummel":
+                    setTitle(`HUMMEL`);
+                    break;
+                case "mitre":
+                    setTitle(`MITRE`);
+                    break;
+                case "fiume":
+                    setTitle(`FIUME`);
+                    break;
+                case "kdy":
+                    setTitle(`KDY`);
+                    break;
+                case "tbs":
+                    setTitle(`TBS`);
+                    break;
+                case "puma":
+                    setTitle(`PUMA`);
+                    break;
+                case "errea":
+                    setTitle(`ERREA`);
+                    break;
+                case "cmd":
+                    setTitle(`CMD`);
+                    break;
+                case "reusch":
+                    setTitle(`REUSCH`);
+                    break;
+                case "sport2000":
+                    setTitle(`SPORT 2000`);
+                    break;
+                case "ruge":
+                    setTitle(`RUGE`);
                     break;
             }
-            setBannerImg("../img/banners/banner02.jpg");
+            setBannerImg("");
         } else {
             obtenerProductos().then((respuesta) => {
                 setProducts(respuesta);
@@ -33,7 +87,7 @@ export default function ItemListContainer(){
             setTitle(`TODOS LOS PRODUCTOS`);
             setBannerImg("./img/banners/banner.jpg");
         }
-    }, [divisionid]);
+    }, [marcaid]);
 
     return (
         <div className="itemListContainer">

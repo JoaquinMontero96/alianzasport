@@ -32,7 +32,7 @@ function Footer() {
         </div>
       </div>
       <div className='footerRights'>
-          <p>Alianza Sport © | Todos los derechos reservados.</p>
+          <p>Alianza Sport © 2023 | Todos los derechos reservados.</p>
       </div>
     </footer>
   )

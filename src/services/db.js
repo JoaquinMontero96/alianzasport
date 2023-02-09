@@ -28,9 +28,9 @@ export async function obtenerProductos(){
 	return dataDocs;
 };
 
-export async function obtenerProductosPorDivision(divisionid){
+export async function obtenerProductosPorMarca(marcaid){
 	const productsCollection = collection(db, "products");
-	const q =  query(productsCollection, where("division", "==", divisionid));
+	const q =  query(productsCollection, where("marca", "==", marcaid));
 	const snapshot = await getDocs(q);
 	const dataDocs = snapshot.docs.map(item => ({...item.data(), id: item.id}));
 	return dataDocs;

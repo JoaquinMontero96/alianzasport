@@ -79,8 +79,13 @@
 nav ul{
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
+    position: relative;
+    height: 100px;
+    cursor: pointer;
 }
 
 nav ul li{
@@ -92,4 +97,22 @@ nav ul li{
 nav ul li a {
     color: white;
     text-decoration: none;
+}
+
+.subMenu{
+    display: none;
+}
+
+.subMenuActive{
+    position: absolute;
+    top: 70px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #001034;
+    width: 150px;
+    gap: 6px;
+    padding: 12px 0;
 }

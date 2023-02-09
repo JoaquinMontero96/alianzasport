@@ -16,7 +16,7 @@ export default function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<ItemListContainer />}/>
-          <Route path='/division/:divisionid' element={<ItemListContainer />}/>
+          <Route path='/marca/:marcaid' element={<ItemListContainer />}/>
           <Route path='/item/:itemid' element={<ItemDetailContainer />}/>
           <Route path='*' element={<h2>Error 404: Page not found</h2>}/>
           <Route path='/cart' element={<Cart/>}/>
