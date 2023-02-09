@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { doc, getDoc, collection, getDocs, query, where, getFirestore } from "firebase/firestore";
+import { doc, getDoc, collection, getDocs, query, where, addDoc, getFirestore, orderBy } from "firebase/firestore";
+import products from "../data/products";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyDvhK07D95snNHHk-S30-H8m5GJ8-VFk7s",
@@ -21,7 +22,8 @@ export async function obtenerProductoUnico(itemid){
 
 export async function obtenerProductos(){
 	const productsCollection = collection(db, "products");
-	const snapshot = await getDocs(productsCollection);
+	const q = query(productsCollection, orderBy("club"));
+	const snapshot = await getDocs(q);
 	const dataDocs = snapshot.docs.map(item => ({...item.data(), id: item.id}));
 	return dataDocs;
 };
@@ -33,3 +35,16 @@ export async function obtenerProductosPorDivision(divisionid){
 	const dataDocs = snapshot.docs.map(item => ({...item.data(), id: item.id}));
 	return dataDocs;
 };
+
+export async function createBuyOrder(order) {
+	const ordersCollection = collection(db, "orders")
+	const orderDoc = await addDoc(ordersCollection, order);
+	return orderDoc.id;
+}
+
+export async function exportData() {
+	const productsCollection = collection(db, "products");
+	for (let item of products) {
+		addDoc(productsCollection, item);
+	}
+}
