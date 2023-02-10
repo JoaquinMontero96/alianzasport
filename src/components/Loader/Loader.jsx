@@ -1,6 +1,6 @@
 import React from 'react';
 import './Loader.css';
-import { RotatingSquare } from  'react-loader-spinner';
+import { RotatingSquare } from 'react-loader-spinner';
 
 function Loader() {
   return (

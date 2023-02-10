@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 import "./Item.css";
 
 export default function Item({urlImg, title, price, id}) {
@@ -7,7 +8,7 @@ export default function Item({urlImg, title, price, id}) {
             <img className="productImg" src={urlImg} alt="imagen" />
             <h3 className="productTitle">{title}</h3>
             <p className="productPrice">$ {price}</p>
-            <Link to={`/item/${id}`} ><button className="productBtn">VER DETALLES</button></Link>
+            <Link to={`/item/${id}`} ><Button value={"VER DETALLES"}></Button></Link>
         </div>
     );
 }

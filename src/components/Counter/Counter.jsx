@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 import "./Counter.css";
 
 function Counter({stock, onAdd}){
@@ -15,8 +16,8 @@ function Counter({stock, onAdd}){
                 <button className="counterBtn" onClick={add}>+</button>
             </div>
             <div style={{display: 'flex', gap: '10px'}}>
-                <button className={stock < 1 ? 'sinStockBtn' : 'productBtn'} onClick={() => stock > 0 && onAdd(count)}>{stock < 1 ? "SIN STOCK" : "AGREGAR AL CARRITO"}</button>
-                <Link to={'/cart'}><button className="productBtn">TERMINAR MI COMPRA</button></Link>
+                <Button className={stock < 1 && 'sinStockBtn'} value={stock < 1 ? "SIN STOCK" : "AGREGAR AL CARRITO"} onClick={() => stock > 0 && onAdd(count)}></Button>
+                <Link to={'/cart'}><Button value={"IR AL CARRITO"}></Button></Link>
             </div>
         </div>
     )

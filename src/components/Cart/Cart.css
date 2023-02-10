@@ -3,18 +3,15 @@
   flex-direction: column;
   align-items: center;
   margin: 36px 0;
+  height: 100%;
+  min-height: 100vh;
 }
 
-.cartHeader{
-  width: 800px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-weight: 600;
-}
-
-.cartHeaderDesc{
-  width: 50%;
+.cartTitle{
+  font-size: 32px;
+  font-weight: 900;
+  color: #001034;
+  margin-bottom: 24px;
 }
 
 .cartProduct{
@@ -23,19 +20,56 @@
   align-items: center;
   gap: 24px;
   width: 800px;
+  box-shadow: 0px 0px 10px 1px rgba(80, 80, 80, 0.2);
+  padding: 12px 36px;
+  margin: 12px;
+}
+
+.emptyCartContainer{
+  font-size: 1.5rem;
+  margin: 12px 0;
 }
 
 .checkoutImg{
-  width: 64px;
+  width: 80px;
   height: auto;
 }
 
 .checkoutTitle{
   text-align: start;
   font-size: 14px;
-  width: 25%;
+  width: 30%;
 }
 
 .checkoutSubtotal{
   font-weight: 600;
+}
+
+.totalPrice{
+  font-size: 24px;
+  font-weight: 900;
+  color: #001034;
+  margin: 24px;
+}
+
+.buttonDisplay{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.removeItemBtn{
+  padding: 8px 12px;
+}
+
+.removeItemBtn:hover{
+  background-color: rgb(188, 49, 49);
+}
+
+.buyerForm{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 400px;
+  margin-bottom: 24px;
 }
