@@ -2,7 +2,7 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function NavBar(){
     const [active, setActive] = useState(false);

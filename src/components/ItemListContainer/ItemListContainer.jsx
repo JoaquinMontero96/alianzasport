@@ -9,7 +9,6 @@ import Loader from "../Loader/Loader";
 export default function ItemListContainer(){
     const [products, setProducts] = useState([]);
     const [title, setTitle] = useState("");
-    const [bannerImg, setBannerImg] = useState("./img/banners/banner.jpg");
     const [isLoading, setIsLoading] = useState(true);
     let { marcaid } = useParams();
 
@@ -77,21 +76,21 @@ export default function ItemListContainer(){
                 case "ruge":
                     setTitle(`RUGE`);
                     break;
+                default:
+                    setTitle("");
             }
-            setBannerImg("");
         } else {
             obtenerProductos().then((respuesta) => {
                 setProducts(respuesta);
                 setIsLoading(false);
             });
             setTitle(`TODOS LOS PRODUCTOS`);
-            setBannerImg("./img/banners/banner.jpg");
         }
     }, [marcaid]);
 
     return (
         <div className="itemListContainer">
-            <Banner url={bannerImg}/>
+            <Banner/>
             {isLoading ? <Loader/> :
             <>
                 <h2 className="itemListContainerTitle">{title}</h2>

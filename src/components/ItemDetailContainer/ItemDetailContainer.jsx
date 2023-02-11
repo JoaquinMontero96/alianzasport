@@ -13,7 +13,7 @@ export default function ItemDetailContainer(){
         obtenerProductoUnico(itemid)
         .then((respuesta) => {setProduct(respuesta); setIsLoading(false)})
         .catch((error) => {alert(`Error: ${error}`)})
-    }, []);
+    }, [itemid]);
 
     return (
         <>

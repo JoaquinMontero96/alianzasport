@@ -12,7 +12,6 @@
     justify-content: center;
     color: white;
     height: 100px;
-    margin-top: 24px;
 }
 
 .container{
@@ -115,4 +114,5 @@ nav ul li a {
     width: 150px;
     gap: 6px;
     padding: 12px 0;
+    z-index: 1;
 }

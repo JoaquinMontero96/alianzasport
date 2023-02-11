@@ -1,0 +1,17 @@
+.paymentsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 4px 0;
+}
+
+.paymentsImg{
+  width: 32px;
+}
+
+.paymentsTxt{
+  font-size: 14px;
+  font-weight: 300;
+}

@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { cartContext } from "../../storage/cartContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Counter from "../Counter/Counter";
 import "./ItemDetail.css";
 
@@ -7,8 +9,9 @@ export default function ItemDetail({product}) {
 	const { addItem } = useContext(cartContext);
 
 	function handleAddToCart(count) {
+		const notify = () => toast.success(`Agregaste ${count} ${product.title} al carrito`);
 		addItem({...product, count:count});
-		alert(`Agregaste ${count} ${product.title} al carrito`);
+		notify();
 	}
 
 	return(
@@ -25,6 +28,7 @@ export default function ItemDetail({product}) {
 						<p className="productDetailTxt">Año: <span>{product.anio}</span></p>
 					</div>
 					<Counter stock={product.stock} onAdd={handleAddToCart}/>
+					<ToastContainer/>
 				</div>
 			</div>
 		</div>

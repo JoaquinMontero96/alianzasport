@@ -57,3 +57,7 @@
     font-weight: 900;
     font-size: 24px;
 }
+
+:root{
+    --toastify-color-success: #a4cfea;
+}

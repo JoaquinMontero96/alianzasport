@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import { CartContextProvider } from './storage/cartContext';
 import Cart from './components/Cart/Cart';
 import { obtenerProductoUnico } from './services/db';
+import PaymentsBanner from './components/PaymentsBanner/PaymentsBanner';
 
 export default function App() {
   obtenerProductoUnico();
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <CartContextProvider>
       <BrowserRouter>
+        <PaymentsBanner/>
         <NavBar />
         <Routes>
           <Route path='/' element={<ItemListContainer />}/>

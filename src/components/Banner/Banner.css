@@ -1,8 +1,14 @@
 .banner{
-    margin: 24px 0;
+    margin: 24px 0 !important;
+    display: flex;
+    width: 100%;
 }
 
 .bannerImg{
     width: 100%;
     height: auto;
+}
+
+.slick-arrow{
+    display: none !important;
 }
